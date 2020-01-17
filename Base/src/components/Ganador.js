@@ -1,32 +1,19 @@
-import React, { useCallback, useState } from 'react';
-import {
-  Container,
-  Avatar,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText
-} from '@material-ui/core';
-import SaveIcon from '@material-ui/icons/Save';
-import { useDispatch, useSelector } from 'react-redux';
-import { goBack } from 'connected-react-router';
+import React, { useState } from 'react';
+import { Container, List, ListItem } from '@material-ui/core';
 
-import { configuracionSorteo } from '../actions/sorteo';
 import useMount from '../hooks/useMount';
 import jsonApi from '../services/jsonApi';
 import useStyles from '../containers/styles';
 
 const Ganador = () => {
   const classes = useStyles();
-  const dispatch = useDispatch();
 
-  const { userList, ganador } = useSelector(({ sorteo }) => sorteo);
+  const [ganador, setGanador] = useState([]);
 
-  console.log('dataList ', userList);
   useMount(async () => {
-    const { data } = await jsonApi().ganadores(ganador);
+    const { data } = await jsonApi().getGanador();
 
-    // dispatch(configuracionSorteo(data[0]));
+    setGanador(data);
     console.log(data);
   });
 

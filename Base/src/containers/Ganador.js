@@ -1,11 +1,9 @@
 import React, { useCallback } from 'react';
-import { Button, Container, Grid, Paper } from '@material-ui/core';
+import { Container } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
 
 import Ganadores from '../components/Ganador';
-import { setGanador } from '../actions/sorteo';
-import { SORTEO } from '../routes/paths';
 
 import useStyles from './styles';
 

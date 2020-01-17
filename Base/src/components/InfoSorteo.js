@@ -1,8 +1,6 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { Container, List, ListItem, ListItemText } from '@material-ui/core';
-import SaveIcon from '@material-ui/icons/Save';
 import { useDispatch, useSelector } from 'react-redux';
-import { goBack } from 'connected-react-router';
 
 import { configuracionSorteo } from '../actions/sorteo';
 import useMount from '../hooks/useMount';

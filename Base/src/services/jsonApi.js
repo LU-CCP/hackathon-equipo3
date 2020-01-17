@@ -13,6 +13,7 @@ const createApi = () => {
   const addUsers = data => post('users/add', data);
   const ganadores = data => post('ganadores', { nombre: data });
   const getQR = () => get('getQR');
+  const getGanador = () => get('ganadores/set');
 
   return {
     getCrear,
@@ -20,7 +21,8 @@ const createApi = () => {
     getSorteo,
     addUsers,
     ganadores,
-    getQR
+    getQR,
+    getGanador
   };
 };
 
