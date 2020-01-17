@@ -1,17 +1,18 @@
 import { create } from 'apisauce';
 
 const config = {
-  baseURL: 'https://randomuser.me/'
+  baseURL: 'http://10.10.11.51:4000/'
 };
 
 const createApi = () => {
-  const { get } = create(config);
+  const { get, post } = create(config);
 
-  const getUsers = () =>
-    get('api/?format=pretty&results=50&inc=name,email,login,picture&noinfo');
+  const getCrear = data =>
+    // get('api/?format=pretty&results=50&inc=name,email,login,picture&noinfo');
+    post('crear', data);
 
   return {
-    getUsers
+    getCrear
   };
 };
 
