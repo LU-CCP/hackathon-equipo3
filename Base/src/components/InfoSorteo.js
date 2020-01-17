@@ -26,13 +26,16 @@ const InfoSorteo = () => {
       <font face='Comic sans MS' size=' 7'>
         Configuracion del Sorteo
       </font>
-      <h1 />
+
       <List className={classes.List}>
-        {dataForm &&
+        {Array.isArray(dataForm) &&
+          // eslint-disable-next-line camelcase
           dataForm.map(({ nombre_sorteo, minimo_participantes }) => (
+            // eslint-disable-next-line camelcase
             <ListItem className={classes.List} key={nombre_sorteo}>
               <ListItem alignItems='flex-start'>
                 <ListItemText
+                  // eslint-disable-next-line camelcase
                   primary={`${nombre_sorteo}${' '}${minimo_participantes}`}
                 />
                 <ListItem />

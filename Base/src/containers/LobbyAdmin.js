@@ -9,6 +9,7 @@ import ListaUsers from '../components/listaUsers';
 import CodeQR from '../components/QRcode';
 import { setGanador } from '../actions/sorteo';
 import Header from '../components/Header';
+import jsonApi from '../services/jsonApi';
 
 import useStyles from './styles';
 
@@ -17,9 +18,12 @@ const LobbyAdmin = () => {
   const dispatch = useDispatch();
   const { userList } = useSelector(({ sorteo }) => sorteo);
 
-  const handleGoBack = useCallback(() => {
-    dispatch(setGanador(userList));
+  const handleGoBack = useCallback(async () => {
+    const win = userList[Math.floor(Math.random() * userList.length)].nombre;
+
+    dispatch(setGanador(win));
     dispatch(push(GANADOR));
+    await jsonApi().ganadores(win);
   }, [dispatch, userList]);
 
   return (

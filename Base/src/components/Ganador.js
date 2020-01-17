@@ -14,7 +14,7 @@ const Ganador = () => {
     const { data } = await jsonApi().getGanador();
 
     setGanador(data);
-    console.log(data);
+    console.log('api ganador', data);
   });
 
   return (

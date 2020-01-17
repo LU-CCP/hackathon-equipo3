@@ -1,17 +1,13 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
 import { Container } from '@material-ui/core';
-import { useDispatch, useSelector } from 'react-redux';
-import { goBack } from 'connected-react-router';
+import { useSelector } from 'react-redux';
 
-import { configuracionSorteo } from '../actions/sorteo';
 import useMount from '../hooks/useMount';
 import jsonApi from '../services/jsonApi';
 import useStyles from '../containers/styles';
 
 const CodeQR = () => {
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const [codeQR, setCode] = useState([]);
 
   const { dataForm } = useSelector(({ sorteo }) => sorteo);
 
@@ -20,7 +16,6 @@ const CodeQR = () => {
     const { data } = await jsonApi().getQR();
 
     console.log(data);
-    setCode(data);
   });
 
   return (

@@ -1,5 +1,6 @@
+/* eslint-disable jsx-a11y/alt-text */
 import React, { useCallback } from 'react';
-import { Button, Container, Grid, Paper, Hidden } from '@material-ui/core';
+import { Button } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
 

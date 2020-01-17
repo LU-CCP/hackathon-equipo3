@@ -1,15 +1,6 @@
-import React, { useCallback, useState } from 'react';
-import {
-  Container,
-  Avatar,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText
-} from '@material-ui/core';
-import SaveIcon from '@material-ui/icons/Save';
+import React from 'react';
+import { Container, ListItem, ListItemText } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-import { goBack } from 'connected-react-router';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 
