@@ -8,6 +8,7 @@ import InfoSorteo from '../components/InfoSorteo';
 import ListaUsers from '../components/listaUsers';
 import CodeQR from '../components/QRcode';
 import { setGanador } from '../actions/sorteo';
+import Header from '../components/Header';
 
 import useStyles from './styles';
 
@@ -22,18 +23,27 @@ const LobbyAdmin = () => {
   }, [dispatch, userList]);
 
   return (
-    <Container className={classes.container} maxWidth={false}>
-      <InfoSorteo />
-      <ListaUsers />
-      <CodeQR />
-      <Button
-        className={classes.button}
-        variant='contained'
-        onClick={handleGoBack}
-      >
-        START
-      </Button>
-    </Container>
+    <div>
+      <Header />
+      <div style={{ textAlign: 'center' }}>
+        <InfoSorteo />
+        <CodeQR />
+      </div>
+      <div>
+        <Container className={classes.container} maxWidth={false}>
+          <ListaUsers />
+
+          <Button
+            className={classes.button}
+            color='primary'
+            variant='contained'
+            onClick={handleGoBack}
+          >
+            START
+          </Button>
+        </Container>
+      </div>
+    </div>
   );
 };
 
