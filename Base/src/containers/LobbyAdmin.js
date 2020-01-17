@@ -34,6 +34,7 @@ const LobbyAdmin = () => {
           <ListaUsers />
 
           <Button
+            style={{ position: 'fixed', left: 630 }}
             className={classes.button}
             color='primary'
             variant='contained'

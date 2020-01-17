@@ -6,6 +6,10 @@ import Checkbox from '@material-ui/core/Checkbox';
 import useForm from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
+import Header from '../components/Header';
+import { Container, Grid, Paper } from '@material-ui/core';
+import useStyles from './styles';
+import InfoSorteo from '../components/InfoSorteo';
 
 import { LOBBY_ADMIN } from '../routes/paths';
 import jsonApi from '../services/jsonApi';
@@ -40,30 +44,42 @@ const Inscripcion = () => {
     handleData(data);
     // handleClose();
   };
+  const classes = useStyles();
 
   return (
-    <Fragment>
-      <form className='App-Form' onSubmit={handleSubmit(onSubmit)}>
-        <DialogTitle id='form-dialog-title'>Configuracion Sorteo</DialogTitle>
+    <div>
+      <Header></Header>
+      <Fragment>
+        <form className='App-Form' onSubmit={handleSubmit(onSubmit)}>
+          <Container className={classes.container} maxWidth={false}>
+            <Grid className={classes.grid}>
+              <Paper className={classes.paperForm}>
+                <DialogTitle id='form-dialog-title'>
+                  <InfoSorteo />
+                </DialogTitle>
 
-        <TextField
-          autoFocus
-          margin='dense'
-          id='firstName'
-          name='nombre'
-          label='Nombre Creador '
-          type='text'
-          //   defaultValue={open.first}
-          fullWidth
-          inputRef={register({ required: true, maxLength: 50 })}
-          variant='outlined'
-        />
+                <TextField
+                  autoFocus
+                  margin='dense'
+                  id='firstName'
+                  name='nombre'
+                  label='Usuario Participante '
+                  type='text'
+                  //   defaultValue={open.first}
+                  fullWidth
+                  inputRef={register({ required: true, maxLength: 50 })}
+                  variant='outlined'
+                />
 
-        <Button type='submit' color='primary' variant='contained'>
-          Save
-        </Button>
-      </form>
-    </Fragment>
+                <Button type='submit' color='primary' variant='contained'>
+                  Save
+                </Button>
+              </Paper>
+            </Grid>
+          </Container>
+        </form>
+      </Fragment>
+    </div>
   );
 };
 

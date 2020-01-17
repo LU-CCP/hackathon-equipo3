@@ -1,7 +1,8 @@
 import React from 'react';
 import { Container, List, ListItem, ListItemText } from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { goBack } from 'connected-react-router';
+import Paper from '@material-ui/core/Paper';
 import { configuracionSorteo } from '../actions/sorteo';
 import useMount from '../hooks/useMount';
 import jsonApi from '../services/jsonApi';
@@ -23,23 +24,26 @@ const InfoSorteo = () => {
 
   return (
     <Container className={classes.container} maxWidth={false}>
-      <font face='Comic sans MS' size=' 7'>
-        Configuracion del Sorteo
-      </font>
-      <h1 />
-      <List className={classes.List}>
+      <div className={classes.List}>
         {dataForm &&
           dataForm.map(({ nombre_sorteo, minimo_participantes }) => (
-            <ListItem className={classes.List} key={nombre_sorteo}>
-              <ListItem alignItems='flex-start'>
+            <div
+              style={{ textAlign: 'center' }}
+              className={classes.List}
+              key={nombre_sorteo}
+            >
+              <font face='Roboto' size=' 7'>
+                {nombre_sorteo}
+              </font>
+              <h1 />
+              <Paper elevation={0}>
                 <ListItemText
-                  primary={`${nombre_sorteo}${' '}${minimo_participantes}`}
+                  primary={`${'Numero minimo de participantes: '} ${minimo_participantes}`}
                 />
-                <ListItem />
-              </ListItem>
-            </ListItem>
+              </Paper>
+            </div>
           ))}
-      </List>
+      </div>
     </Container>
   );
 };
