@@ -1,7 +1,20 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import { About, Counter, Home, Root, Sorteo, LobbyAdmin } from '../containers';
+import {
+  About,
+  Counter,
+  Home,
+  Root,
+  Sorteo,
+  LobbyAdmin,
+  Participantes,
+  Inscripcion,
+  Ganador,
+  Lobby,
+  SorteoFutbol,
+  FormFutbol
+} from '../containers';
 
 import {
   ROOT,
@@ -11,7 +24,11 @@ import {
   SORTEO,
   LOBBY_ADMIN,
   PARTICIPANTES,
-  INSCRIPCION
+  INSCRIPCION,
+  GANADOR,
+  LOBBY,
+  SORTEO_FUTBOL,
+  FORM_FUTBOL
 } from './paths';
 
 const Routes = () => (
@@ -22,8 +39,12 @@ const Routes = () => (
     <Route exact path={LOBBY_ADMIN} component={LobbyAdmin} />
     <Route exact path={ABOUT} component={About} />
     <Route exact path={COUNTER} component={Counter} />
-    <Route exact path={PARTICIPANTES} component={About} />
-    <Route exact path={INSCRIPCION} component={Counter} />
+    <Route exact path={PARTICIPANTES} component={Participantes} />
+    <Route exact path={INSCRIPCION} component={Inscripcion} />
+    <Route exact path={GANADOR} component={Ganador} />
+    <Route exact path={LOBBY} component={Lobby} />
+    <Route exact path={SORTEO_FUTBOL} component={SorteoFutbol} />
+    <Route exact path={FORM_FUTBOL} component={FormFutbol} />
   </Switch>
 );
 

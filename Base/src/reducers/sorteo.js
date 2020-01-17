@@ -1,18 +1,21 @@
 import { createReducer } from 'reduxsauce';
 import produce from 'immer';
 
-import { CONFIGURACION_SORTEO } from '../actions/sorteo';
+import { CONFIGURACION_SORTEO, SET_USER_LIST } from '../actions/sorteo';
 
 const INITIAL_STATE = {
-  dataForm: []
+  dataForm: [],
+  userList: []
 };
 
 const setData = produce((draft, { data }) => {
   console.log('data reducer', data);
+
   draft.dataForm.push(data);
 });
-const dropUsuariosCargados = produce((draft, { index }) => {
-  draft.datosApi.splice(index.index, 1);
+const setDataUser = produce((draft, { data }) => {
+  console.log('data user reducer', data);
+  draft.userList = data;
 });
 
 const updateUser = produce((draft, { index }) => {
@@ -26,7 +29,8 @@ const updateUser = produce((draft, { index }) => {
 });
 
 const reducer = createReducer(INITIAL_STATE, {
-  [CONFIGURACION_SORTEO]: setData
+  [CONFIGURACION_SORTEO]: setData,
+  [SET_USER_LIST]: setDataUser
 });
 
 export default reducer;

@@ -7,25 +7,13 @@ import useForm from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
 
-import { LOBBY_ADMIN } from '../routes/paths';
+import { LOBBY_ADMIN, HOME } from '../routes/paths';
 import jsonApi from '../services/jsonApi';
 import { configuracionSorteo } from '../actions/sorteo';
 
 const Sorteo = () => {
-  // const [open, setOpen] = React.useState(true);
-  const [checked, setChecked] = React.useState(true);
   const { register, handleSubmit, errors } = useForm();
   const dispatch = useDispatch();
-  //   const { open, nameObject } = props;
-  const { datosApi } = useSelector(({ counter }) => counter);
-
-  //   const handleClose = () => {
-  //     props.onClose();
-  //   };
-
-  const handleChange = event => {
-    setChecked(event.target.checked);
-  };
 
   const handleNavigate = useCallback(path => () => dispatch(push(path)), [
     dispatch
@@ -46,7 +34,6 @@ const Sorteo = () => {
     }
 
     handleData(data);
-    // handleClose();
   };
 
   return (
@@ -61,7 +48,17 @@ const Sorteo = () => {
           name='nombre'
           label='Nombre Creador '
           type='text'
-          //   defaultValue={open.first}
+          fullWidth
+          inputRef={register({ required: true, maxLength: 50 })}
+          variant='outlined'
+        />
+        <TextField
+          autoFocus
+          margin='dense'
+          id='firstName'
+          name='nombre_sorteo'
+          label='Nombre Sorteo'
+          type='text'
           fullWidth
           inputRef={register({ required: true, maxLength: 50 })}
           variant='outlined'
@@ -69,12 +66,6 @@ const Sorteo = () => {
         {errors.firstName && errors.firstName.type === 'required' && (
           <span>First name is required.</span>
         )}
-        {/* <Checkbox
-          checked={checked}
-          onChange={handleChange}
-          value='primary'
-          inputProps={{ 'aria-label': 'primary checkbox' }}
-        /> */}
 
         <TextField
           id='minimo'
@@ -106,6 +97,14 @@ const Sorteo = () => {
         {errors.minimo && errors.minimo.type === 'required' && (
           <span role='alert'>Minimo de participantes requerido.</span>
         )}
+        <Button
+          type='submit'
+          color='primary'
+          variant='contained'
+          onClick={handleNavigate(HOME)}
+        >
+          Volver
+        </Button>
 
         <Button type='submit' color='primary' variant='contained'>
           Save

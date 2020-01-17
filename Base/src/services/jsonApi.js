@@ -7,12 +7,16 @@ const config = {
 const createApi = () => {
   const { get, post } = create(config);
 
-  const getCrear = data =>
-    // get('api/?format=pretty&results=50&inc=name,email,login,picture&noinfo');
-    post('crear', data);
+  const getCrear = data => post('crear', data);
+  const getUsers = () => get('users');
+  const getSorteo = () => get('getSorteo');
+  const addUsers = data => post('users/add', data);
 
   return {
-    getCrear
+    getCrear,
+    getUsers,
+    getSorteo,
+    addUsers
   };
 };
 

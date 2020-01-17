@@ -1,6 +1,15 @@
 import React, { useCallback, useState } from 'react';
-import { Button, Container } from '@material-ui/core';
-import SaveIcon from '@material-ui/icons/Save';
+import {
+  Button,
+  Container,
+  ListItemSecondaryAction,
+  IconButton,
+  Avatar,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText
+} from '@material-ui/core';
 import { useDispatch, useSelector } from 'react-redux';
 import { goBack } from 'connected-react-router';
 
@@ -9,7 +18,7 @@ import ListaUsers from '../components/listaUsers';
 
 import useStyles from './styles';
 
-const LobbyAdmin = () => {
+const Lobby = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
@@ -19,15 +28,8 @@ const LobbyAdmin = () => {
     <Container className={classes.container} maxWidth={false}>
       <InfoSorteo />
       <ListaUsers />
-      <Button
-        className={classes.button}
-        variant='contained'
-        onClick={handleGoBack}
-      >
-        START
-      </Button>
     </Container>
   );
 };
 
-export default LobbyAdmin;
+export default Lobby;
