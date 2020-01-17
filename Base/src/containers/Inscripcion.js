@@ -6,14 +6,15 @@ import Checkbox from '@material-ui/core/Checkbox';
 import useForm from 'react-hook-form';
 import { useSelector, useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
-import Header from '../components/Header';
 import { Container, Grid, Paper } from '@material-ui/core';
-import useStyles from './styles';
-import InfoSorteo from '../components/InfoSorteo';
 
+import Header from '../components/Header';
+import InfoSorteo from '../components/InfoSorteo';
 import { LOBBY_ADMIN } from '../routes/paths';
 import jsonApi from '../services/jsonApi';
 import { configuracionSorteo } from '../actions/sorteo';
+
+import useStyles from './styles';
 
 const Inscripcion = () => {
   // const [open, setOpen] = React.useState(true);
@@ -44,11 +45,12 @@ const Inscripcion = () => {
     handleData(data);
     // handleClose();
   };
+
   const classes = useStyles();
 
   return (
     <div>
-      <Header></Header>
+      <Header />
       <Fragment>
         <form className='App-Form' onSubmit={handleSubmit(onSubmit)}>
           <Container className={classes.container} maxWidth={false}>

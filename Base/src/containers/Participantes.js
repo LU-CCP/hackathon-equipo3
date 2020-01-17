@@ -19,7 +19,7 @@ const Participantes = () => {
 
   return (
     <div>
-      <Header></Header>
+      <Header />
       <Container className={classes.container} maxWidth={false}>
         <InfoSorteo />
         <CodeQR />
