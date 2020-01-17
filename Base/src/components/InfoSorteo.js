@@ -32,7 +32,10 @@ const InfoSorteo = () => {
 
   return (
     <Container className={classes.container} maxWidth={false}>
-      <h1>Informacion Sorteo</h1>
+      <font face='Comic sans MS' size=' 7'>
+        Configuracion del Sorteo
+      </font>
+      <h1 />
       <List className={classes.List}>
         {dataForm.map(({ nombre_sorteo, minimo_participantes }) => (
           <ListItem className={classes.List} key={nombre_sorteo}>

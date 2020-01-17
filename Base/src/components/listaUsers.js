@@ -10,6 +10,8 @@ import {
 import SaveIcon from '@material-ui/icons/Save';
 import { useDispatch, useSelector } from 'react-redux';
 import { goBack } from 'connected-react-router';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 import useMount from '../hooks/useMount';
 import jsonApi from '../services/jsonApi';
@@ -30,20 +32,49 @@ const ListaUsers = () => {
     console.log('listausers', data);
   });
 
-  return (
-    <Container className={classes.container} maxWidth={false}>
-      <h1>Lista usuarios</h1>
-      <List className={classes.List}>
-        {userList.map(({ nombre }) => (
-          <ListItem className={classes.List} key={nombre}>
-            <ListItem alignItems='flex-start'>
-              <ListItemText primary={`${nombre}`} />
-              <ListItem />
+  function FormRow() {
+    return (
+      <React.Fragment>
+        <Grid
+          style={{
+            gridTemplateColumns: '1fr 1fr 1fr',
+            display: 'Grid',
+            margin: 'auto'
+          }}
+          className={classes.List}
+          item
+          xs={6}
+        >
+          {userList.map(({ nombre }) => (
+            <ListItem className={classes.List} key={nombre}>
+              <ListItem alignItems='flex-start'>
+                <Paper className={classes.paper}>
+                  <ListItemText primary={`${nombre}`} />
+                </Paper>
+              </ListItem>
             </ListItem>
-          </ListItem>
-        ))}
-      </List>
-    </Container>
+          ))}
+        </Grid>
+      </React.Fragment>
+    );
+  }
+
+  return (
+    <div style={{ textAlign: 'center' }}>
+      <font face='Comic sans MS' size=' 7'>
+        Lista de Usuarios
+      </font>
+      <Container className={classes.container} maxWidth={false}>
+        <div className={classes.root}>
+          <Grid container spacing={1}>
+            <Grid container item xs={12} spacing={3}>
+              <FormRow />
+            </Grid>
+          </Grid>
+        </div>
+        <br />
+      </Container>
+    </div>
   );
 };
 

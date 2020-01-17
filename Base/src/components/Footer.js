@@ -7,7 +7,7 @@ import Logo_Blanco from '../resources/Logo_Blanco.png';
 const Footer = () => (
   <BottomNavigation
     style={{
-      backgroundColor: 'blue',
+      backgroundColor: '#3f51b5',
       position: 'fixed',
       bottom: 0,
       right: 0,

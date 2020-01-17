@@ -19,18 +19,22 @@ const LobbyAdmin = () => {
   return (
     <div>
       <Header />
-      <Container className={classes.container} maxWidth={false}>
+      <div style={{ textAlign: 'center' }}>
         <InfoSorteo />
-        <ListaUsers />
-        <Button
-          className={classes.button}
-          color='primary'
-          variant='contained'
-          onClick={handleGoBack}
-        >
-          START
-        </Button>
-      </Container>
+      </div>
+      <div>
+        <Container className={classes.container} maxWidth={false}>
+          <ListaUsers />
+          <Button
+            className={classes.button}
+            color='primary'
+            variant='contained'
+            onClick={handleGoBack}
+          >
+            START
+          </Button>
+        </Container>
+      </div>
     </div>
   );
 };
