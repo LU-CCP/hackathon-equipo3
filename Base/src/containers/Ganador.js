@@ -2,8 +2,8 @@ import React, { useCallback } from 'react';
 import { Container } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
-import loginBg2 from '../resources/loginBg2.gif';
 
+import loginBg2 from '../resources/loginBg2.gif';
 import Ganadores from '../components/Ganador';
 import Header from '../components/Header';
 
@@ -28,7 +28,7 @@ const Ganador = () => {
     >
       <div>
         <Container className={classes.container} maxWidth={false}>
-          <Header></Header>
+          <Header />
           <Ganadores />
         </Container>
       </div>
