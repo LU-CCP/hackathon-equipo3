@@ -29,7 +29,6 @@ import {
 
 const Routes = () => (
   <Switch>
-    <Route exact path={ROOT} component={Root} />
     <Route exact path={HOME} component={Home} />
     <Route exact path={SORTEO} component={Sorteo} />
     <Route exact path={LOBBY_ADMIN} component={LobbyAdmin} />

@@ -20,17 +20,22 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <img src={BackgroundLogo} style={{ position: 'relative', left: 580 }} />
+      <div style={{ textAlign: 'center' }}>
+        <img src={BackgroundLogo} style={{ position: 'relative', top: 60 }} />
+      </div>
+      <div style={{ textAlign: 'center' }}>
+        {' '}
+        <Button
+          className={classes.button}
+          color='primary'
+          variant='contained'
+          onClick={handleNavigate(SORTEO)}
+          style={{ position: 'relative', top: 120 }}
+        >
+          Let's Go
+        </Button>
+      </div>
 
-      <Button
-        className={classes.button}
-        color='primary'
-        variant='contained'
-        onClick={handleNavigate(SORTEO)}
-        style={{ position: 'relative', left: 430, top: 120 }}
-      >
-        Let's Go
-      </Button>
       <Footer />
     </div>
   );
