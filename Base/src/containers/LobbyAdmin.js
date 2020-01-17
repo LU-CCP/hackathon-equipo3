@@ -6,6 +6,7 @@ import { goBack } from 'connected-react-router';
 
 import InfoSorteo from '../components/InfoSorteo';
 import ListaUsers from '../components/listaUsers';
+import Header from '../components/Header';
 
 import useStyles from './styles';
 
@@ -16,17 +17,21 @@ const LobbyAdmin = () => {
   const handleGoBack = useCallback(() => dispatch(goBack()), [dispatch]);
 
   return (
-    <Container className={classes.container} maxWidth={false}>
-      <InfoSorteo />
-      <ListaUsers />
-      <Button
-        className={classes.button}
-        variant='contained'
-        onClick={handleGoBack}
-      >
-        START
-      </Button>
-    </Container>
+    <div>
+      <Header />
+      <Container className={classes.container} maxWidth={false}>
+        <InfoSorteo />
+        <ListaUsers />
+        <Button
+          className={classes.button}
+          color='primary'
+          variant='contained'
+          onClick={handleGoBack}
+        >
+          START
+        </Button>
+      </Container>
+    </div>
   );
 };
 

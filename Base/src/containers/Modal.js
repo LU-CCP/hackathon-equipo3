@@ -27,6 +27,7 @@ const FormDialog = props => {
 
   const onSubmit = (data, e) => {
     const indice = datosApi.findIndex(element => element.email === nameObject);
+
     handleUpdate({ data, indice });
     handleClose();
   };

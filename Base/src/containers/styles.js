@@ -1,5 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
-import { colors } from '@material-ui/core/';
+import { colors, Hidden } from '@material-ui/core/';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   },
   grid: {
     display: 'flex',
-    height: '100vh',
+    height: '77vh',
     alignItems: 'center',
     justifyContent: 'center',
     [theme.breakpoints.down('md')]: {
@@ -21,6 +21,13 @@ const useStyles = makeStyles(theme => ({
   paper: {
     display: 'flex',
     flexDirection: 'row',
+    maxWidth: 300,
+    padding: theme.spacing(4),
+    opacity: 0.9
+  },
+  paperForm: {
+    display: 'flex',
+    flexDirection: 'column',
     maxWidth: 300,
     padding: theme.spacing(4),
     opacity: 0.9
