@@ -8,15 +8,9 @@ import Ganador from './Ganador';
 import Lobby from './Lobby';
 import SorteoFutbol from './SorteoFutbol';
 import FormFutbol from './FormFutbol';
-import About from './About';
-import Counter from './Counter';
-import Modal from './Modal';
 
 export {
-  About,
-  Counter,
   Home,
-  Modal,
   Root,
   Sorteo,
   LobbyAdmin,

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { push } from 'connected-react-router';
 
 import InfoSorteo from '../components/InfoSorteo';
+import CodeQR from '../components/QRcode';
 import { INSCRIPCION } from '../routes/paths';
 
 import useStyles from './styles';
@@ -19,6 +20,7 @@ const Participantes = () => {
     <div>
       <Container className={classes.container} maxWidth={false}>
         <InfoSorteo />
+        <CodeQR />
         <Grid className={classes.grid}>
           <Paper className={classes.paper}>
             <Button

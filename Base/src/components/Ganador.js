@@ -1,5 +1,12 @@
 import React, { useCallback, useState } from 'react';
-import { Container, List, ListItem, ListItemText } from '@material-ui/core';
+import {
+  Container,
+  Avatar,
+  List,
+  ListItem,
+  ListItemAvatar,
+  ListItemText
+} from '@material-ui/core';
 import SaveIcon from '@material-ui/icons/Save';
 import { useDispatch, useSelector } from 'react-redux';
 import { goBack } from 'connected-react-router';
@@ -9,17 +16,17 @@ import useMount from '../hooks/useMount';
 import jsonApi from '../services/jsonApi';
 import useStyles from '../containers/styles';
 
-const InfoSorteo = () => {
+const Ganador = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
 
-  const { dataForm } = useSelector(({ sorteo }) => sorteo);
+  const { userList, ganador } = useSelector(({ sorteo }) => sorteo);
 
-  console.log('dataform ', dataForm);
+  console.log('dataList ', userList);
   useMount(async () => {
-    const { data } = await jsonApi().getSorteo();
+    const { data } = await jsonApi().ganadores(ganador);
 
-    dispatch(configuracionSorteo(data));
+    // dispatch(configuracionSorteo(data[0]));
     console.log(data);
   });
 
@@ -27,19 +34,10 @@ const InfoSorteo = () => {
     <Container className={classes.container} maxWidth={false}>
       <h1>Informacion Sorteo</h1>
       <List className={classes.List}>
-        {dataForm.map(({ nombre_sorteo, minimo_participantes }) => (
-          <ListItem className={classes.List} key={nombre_sorteo}>
-            <ListItem alignItems='flex-start'>
-              <ListItemText
-                primary={`${nombre_sorteo}${' '}${minimo_participantes}`}
-              />
-              <ListItem />
-            </ListItem>
-          </ListItem>
-        ))}
+        <ListItem>{ganador}</ListItem>
       </List>
     </Container>
   );
 };
 
-export default InfoSorteo;
+export default Ganador;
