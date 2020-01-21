@@ -11,7 +11,7 @@ const Header = () => (
       <Container maxWidth='sm'>
         <Button
           href='https://www.lagash.com/'
-          style={{ position: 'relative', right: 350 }}
+          style={{ position: 'fixed', left: 20, height: 30, top: 15 }}
         >
           <img src={Logo} />
         </Button>

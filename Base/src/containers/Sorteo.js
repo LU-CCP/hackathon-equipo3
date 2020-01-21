@@ -51,7 +51,7 @@ const Sorteo = () => {
             <Grid className={classes.grid}>
               <Paper className={classes.paperForm}>
                 <DialogTitle id='form-dialog-title'>
-                  Configuracion Sorteo
+                  Configuración Sorteo
                 </DialogTitle>
 
                 <TextField
@@ -95,7 +95,7 @@ const Sorteo = () => {
                 <TextField
                   className={classes.item}
                   id='minimo'
-                  label='Minimo participantes'
+                  label='Mínimo participantes'
                   name='minimo'
                   type='number'
                   InputLabelProps={{
@@ -111,7 +111,7 @@ const Sorteo = () => {
                 <TextField
                   className={classes.item}
                   id='minimoParticipantes'
-                  label='Numero ganadores'
+                  label='Número ganadores'
                   type='number'
                   name='seleccionados'
                   InputLabelProps={{
@@ -131,7 +131,7 @@ const Sorteo = () => {
                   color='primary'
                   variant='contained'
                 >
-                  Save
+                  Guardar
                 </Button>
                 <Button
                   className={classes.item}

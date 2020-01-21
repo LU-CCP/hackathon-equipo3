@@ -7,6 +7,7 @@ import jsonApi from '../services/jsonApi';
 import InfoSorteo from '../components/InfoSorteo';
 import ListaUsers from '../components/listaUsers';
 import { GANADOR } from '../routes/paths';
+import Header from '../components/Header';
 
 import useStyles from './styles';
 
@@ -40,6 +41,7 @@ const Lobby = () => {
 
   return (
     <Container className={classes.container} maxWidth={false}>
+      <Header />
       <InfoSorteo />
       <ListaUsers />
     </Container>

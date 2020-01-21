@@ -52,7 +52,7 @@ const ListaUsers = () => {
 
   return (
     <div style={{ textAlign: 'center' }}>
-      <font face='Comic sans MS' size=' 7'>
+      <font face='Roboto' size=' 7'>
         Lista de Usuarios
       </font>
       <Container className={classes.container} maxWidth={false}>

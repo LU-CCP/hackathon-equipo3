@@ -18,10 +18,20 @@ const Ganador = () => {
   });
 
   return (
-    <Container className={classes.container} maxWidth={false}>
-      <h1>Informacion Sorteo</h1>
+    <Container
+      style={{ textAlign: 'center' }}
+      className={classes.container}
+      maxWidth={false}
+    >
+      <font face='Roboto' size=' 7'>
+        EL GANADOR ES
+      </font>
+      <h1 />
       <List className={classes.List}>
-        <ListItem>{ganador}</ListItem>
+        <font face='Roboto' size=' 7'>
+          "{ganador}"
+        </font>
+        <h1 />
       </List>
     </Container>
   );

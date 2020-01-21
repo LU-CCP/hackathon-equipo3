@@ -36,15 +36,17 @@ const LobbyAdmin = () => {
       <div>
         <Container className={classes.container} maxWidth={false}>
           <ListaUsers />
-
-          <Button
-            className={classes.button}
-            color='primary'
-            variant='contained'
-            onClick={handleGoBack}
-          >
-            START
-          </Button>
+          <div style={{ textAlign: 'center' }}>
+            <Button
+              style={{ width: 200, height: 50 }}
+              className={classes.button}
+              color='primary'
+              variant='contained'
+              onClick={handleGoBack}
+            >
+              COMENZAR
+            </Button>
+          </div>
         </Container>
       </div>
     </div>

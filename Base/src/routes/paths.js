@@ -1,5 +1,4 @@
-export const ROOT = '/';
-export const HOME = '/home';
+export const HOME = '/';
 export const SORTEO = '/sorteo';
 export const LOBBY_ADMIN = '/lobbyAdmin';
 

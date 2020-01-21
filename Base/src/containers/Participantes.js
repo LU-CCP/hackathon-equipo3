@@ -6,6 +6,7 @@ import { push } from 'connected-react-router';
 import InfoSorteo from '../components/InfoSorteo';
 import CodeQR from '../components/QRcode';
 import { INSCRIPCION } from '../routes/paths';
+import Header from '../components/Header';
 
 import useStyles from './styles';
 
@@ -18,11 +19,12 @@ const Participantes = () => {
 
   return (
     <div>
+      <Header />
       <Container className={classes.container} maxWidth={false}>
         <InfoSorteo />
         <CodeQR />
         <Grid className={classes.grid}>
-          <Paper className={classes.paper}>
+          <Paper elevation={0} className={classes.paper}>
             <Button
               className={classes.button}
               color='primary'

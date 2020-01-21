@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
   },
   grid: {
     display: 'flex',
-    height: '77vh',
+    height: '65vh',
     alignItems: 'center',
     justifyContent: 'center',
     [theme.breakpoints.down('md')]: {
