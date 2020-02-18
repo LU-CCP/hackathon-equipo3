@@ -1,17 +1,34 @@
 import { create } from 'apisauce';
 
 const config = {
-  baseURL: 'https://randomuser.me/'
+  baseURL: 'http://localhost:3000/'
 };
 
 const createApi = () => {
-  const { get } = create(config);
+  const { get, post } = create(config);
 
-  const getUsers = () =>
-    get('api/?format=pretty&results=50&inc=name,email,login,picture&noinfo');
+  const setSorteo = data =>
+    post('createDraw', data => {
+      console.log(data);
+    });
+
+  const getCrear = data => post('crear', data);
+  const getUsers = () => get('users');
+  const getSorteo = () => get('getSorteo');
+  const addUsers = data => post('users/add', data);
+  const ganadores = data => post('ganadores', { nombre: data });
+  const getQR = () => get('getQR');
+  const getGanador = () => get('ganadores/set');
 
   return {
-    getUsers
+    setSorteo,
+    getCrear,
+    getUsers,
+    getSorteo,
+    addUsers,
+    ganadores,
+    getQR,
+    getGanador
   };
 };
 
